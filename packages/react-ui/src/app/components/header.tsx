@@ -40,7 +40,7 @@ export const Header = () => {
         <div className="flex items-center justify-center gap-4">
           <InviteUserDialog></InviteUserDialog>
           {showPlatformAdminDashboard && (
-            <Link to={isInPlatformAdmin ? '/' : '/platform'}>
+            <Link to={isInPlatformAdmin ? '/dashboard' : '/platform'}>
               <Button
                 variant={'outline'}
                 size="sm"

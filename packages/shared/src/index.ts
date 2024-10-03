@@ -67,6 +67,7 @@ export * from './lib/license-keys'
 export * from './lib/invitations'
 export * from './lib/workers'
 export * from './lib/ai'
+export * from './lib/stats/dto/stats-response'
 
 // Look at https://github.com/sinclairzx81/typebox/issues/350
 import { TypeSystemPolicy } from '@sinclair/typebox/system'

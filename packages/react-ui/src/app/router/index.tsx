@@ -56,6 +56,7 @@ import { GitSyncPage } from '../routes/settings/git-sync';
 import TeamPage from '../routes/settings/team';
 import { SignInPage } from '../routes/sign-in';
 import { SignUpPage } from '../routes/sign-up';
+import { DashboardPage } from '../routes/dashboard';
 import { ShareTemplatePage } from '../routes/templates/share-template';
 
 import { FlagRouteGuard } from './flag-route-guard';
@@ -218,6 +219,16 @@ const routes = [
       </PageTitle>
     ),
   },
+  ...ProjectRouterWrapper({
+    path: '/dashboard',
+    element: (
+      <DashboardContainer>
+          <PageTitle title="Dashboard">
+            <DashboardPage/>
+          </PageTitle>
+      </DashboardContainer>
+    ),
+  }),
   ...ProjectRouterWrapper({
     path: '/settings/alerts',
     element: (

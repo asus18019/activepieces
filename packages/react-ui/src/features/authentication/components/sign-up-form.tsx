@@ -104,7 +104,7 @@ const SignUpForm = ({
     onSuccess: (data) => {
       if (data.verified) {
         authenticationSession.saveResponse(data);
-        navigate('/flows');
+        navigate('/dashboard');
       } else {
         setShowCheckYourEmailNote(true);
       }

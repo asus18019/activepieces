@@ -1,5 +1,5 @@
 import { t } from 'i18next';
-import { AlertCircle, Link2, Logs, Workflow, Wrench } from 'lucide-react';
+import { AlertCircle, Link2, Logs, Workflow, Wrench, BarChartBigIcon } from 'lucide-react';
 import { Navigate } from 'react-router-dom';
 
 import { useEmbedding } from '@/components/embed-provider';
@@ -28,6 +28,12 @@ export function DashboardContainer({ children }: DashboardContainerProps) {
     return <Navigate to="/sign-in" replace />;
   }
   const links: SidebarLink[] = [
+    {
+      to: '/dashboard',
+      label: t('Dashboard'),
+      icon: BarChartBigIcon,
+      showInEmbed: true,
+    },
     {
       to: '/flows',
       label: t('Flows'),

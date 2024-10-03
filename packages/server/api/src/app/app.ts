@@ -94,6 +94,7 @@ import { websocketService } from './websockets/websockets.service'
 import { flowConsumer } from './workers/consumer'
 import { webhookResponseWatcher } from './workers/helper/webhook-response-watcher'
 import { workerModule } from './workers/worker-module'
+import { statsModule } from './stats/stats.module'
 
 export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> => {
 
@@ -195,6 +196,7 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
     app.addHook('preHandler', securityHandlerChain)
     app.addHook('preHandler', rbacMiddleware)
     await systemJobsSchedule.init()
+    await app.register(statsModule)
     await app.register(fileModule)
     await app.register(flagModule)
     await app.register(storeEntryModule)
